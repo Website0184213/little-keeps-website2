@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="af">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Little Keeps • Onthou Boksies | Kosbare Herinneringe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Inter:wght@300;400;500;600&amp;display=swap');
+        
+        :root {
+            --primary: #67e8f9;
+        }
+        
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .heading-serif {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 700;
+            line-height: 1.1;
+        }
+
+        .section-header {
+            font-size: 2.25rem;
+            line-height: 2.5rem;
+        }
+
+        .warm-bg {
+            background-color: #fffaf0;
+        }
+
+        .premium-wood {
+            background: linear-gradient(145deg, #f5e8c7 0%, #e8d5a3 100%);
+        }
+
+        .theme-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .theme-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        .nav-active {
+            color: #eab308;
+            font-weight: 600;
+        }
+
+        .modal {
+            animation: modalPop 0.3s ease forwards;
+        }
+
+        @keyframes modalPop {
+            from { opacity: 0; transform: scale(0.95) translateY(20px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        .product-shadow {
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+
+        .soft-shadow {
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+
+        .memory-box {
+            background: linear-gradient(#f8f1e3, #f5e8c7);
+            box-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+        }
+
+        .nav-scrolled {
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+
+        .gallery-img {
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+        }
+        
+        .gallery-img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.15);
+        }
+
+        .price-tag {
+            background: linear-gradient(to right, #eab308, #a16207);
+            color: white;
+            box-shadow: 0 4px 6px -1px rgb(133 77 14 / 0.3);
+        }
+
+        .farm-accent {
+            color: #67e8f9;
+        }
+
+        .baby-soft {
+            background-color: #fffaf0;
+        }
+    </style>
+</head>
+<body class="bg-[#fefce8] text-stone-800">
+    <!-- NAVBAR -->
+    <nav id="navbar" class="bg-white border-b border-stone-200 sticky top-0 z-50 transition-all">
+        <div class="max-w-screen-2xl mx-auto">
+            <div class="px-8 py-5 flex items-center justify-between">
+                <div class="flex items-center gap-x-3">
+                    <!-- Logo -->
+                    <div class="flex items-center gap-x-2">
+                        <div class="w-11 h-11 bg-[#eab308] rounded-2xl flex items-center justify-center shadow-inner">
+                            <i class="fa-solid fa-box-heart text-white text-3xl"></i>
+                        </div>
+                        <div>
+                            <span class="font-bold text-3xl tracking-tighter text-stone-900">Little</span>
+                            <span class="font-bold text-3xl tracking-tighter text-[#eab308]">Keeps</span>
+                        </div>
+                    </div>
+                    <div class="hidden md:block pl-3 border-l border-stone-200">
+                        <span class="text-xs font-medium tracking-[2px] text-stone-500">ONTHOU BOKSIES</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
+                    <a href="#temas" class="hover:text-[#eab308] transition-colors">Temas</a>
+                    <a href="#die-boksie" class="hover:text-[#eab308] transition-colors">Die Boksie</a>
+                    <a href="#byvoegings" class="hover:text-[#eab308] transition-colors">Byvoegings</a>
+                    <a href="#personaliseer" class="hover:text-[#eab308] transition-colors">Bou Joune</a>
+                    <a href="#pryse" class="hover:text-[#eab308] transition-colors">Pryse</a>
+                </div>
+
+                <div class="flex items-center gap-x-3">
+                    <button onclick="document.getElementById('personaliseer').scrollIntoView({ behavior: 'smooth' })" 
+                            class="hidden md:block px-6 py-2.5 text-sm font-semibold bg-white border border-stone-300 hover:bg-stone-50 transition-colors rounded-3xl">
+                        Bou Joune
+                    </button>
+                    <button onclick="document.getElementById('personaliseer').scrollIntoView({ behavior: 'smooth' })" 
+                            class="px-6 py-2.5 text-sm font-semibold bg-[#eab308] hover:bg-[#6b3e0a] transition-colors text-white rounded-3xl flex items-center gap-x-2">
+                        <span>Bestel Nou</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </button>
+                    
+                    <!-- Mobile Menu -->
+                    <button class="md:hidden w-10 h-10 flex items-center justify-center text-stone-600" onclick="toggleMobileMenu()">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="relative bg-[#fefce8] text-stone-800 overflow-hidden">
+        <div class="max-w-screen-2xl mx-auto">
+            <div class="grid md:grid-cols-12 gap-0 items-center">
+                <!-- Hero Content -->
+                <div class="md:col-span-7 px-8 md:pl-16 lg:pl-20 py-16 md:py-20 lg:py-24">
+                    <div class="max-w-xl">
+                        <div class="inline-flex items-center gap-x-2 bg-white/80 backdrop-blur-md border border-yellow-200 px-4 py-1.5 rounded-3xl mb-6">
+                            <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+                            <span class="text-xs font-semibold tracking-widest">NUUT: Plaasdogtertjie &amp; Trekker Temas</span>
+                        </div>
+                        
+                        <h1 class="heading-serif text-6xl md:text-7xl leading-[1.05] tracking-tighter mb-6">
+                            Koester die<br>kosbaarste<br>herinneringe.
+                        </h1>
+                        
+                        <p class="text-xl text-stone-600 max-w-md mb-8">
+                            Pragtige hout onthou boksies met jou baba se eerste romper, haarlokkie, tandjies en 3D-sokkies. 
+                            Persoonlik en onvergeetlik.
+                        </p>
+                        
+                        <div class="flex flex-wrap gap-4">
+                            <button onclick="document.getElementById('temas').scrollIntoView({ behavior: 'smooth' })" 
+                                    class="px-8 py-4 bg-white text-stone-900 font-semibold rounded-3xl flex items-center gap-x-3 hover:bg-cyan-50 transition-all active:scale-[0.985]">
+                                <span>Verken die Temas</span>
+                            </button>
+                            
+                            <button onclick="document.getElementById('personaliseer').scrollIntoView({ behavior: 'smooth' })" 
+                                    class="px-8 py-4 border border-stone-300 hover:bg-white font-semibold rounded-3xl flex items-center gap-x-3 transition-all">
+                                <span>Bou Jou Onthou Boksie</span>
+                            </button>
+                        </div>
+                        
+                        <div class="flex items-center gap-x-6 mt-10 text-sm">
+                            <div class="flex -space-x-2">
+                                <div class="w-7 h-7 bg-stone-300 rounded-full border border-white overflow-hidden"><img src="https://picsum.photos/id/1005/28/28" class="object-cover"></div>
+                                <div class="w-7 h-7 bg-stone-300 rounded-full border border-white overflow-hidden"><img src="https://picsum.photos/id/1011/28/28" class="object-cover"></div>
+                                <div class="w-7 h-7 bg-stone-300 rounded-full border border-white overflow-hidden"><img src="https://picsum.photos/id/201/28/28" class="object-cover"></div>
+                            </div>
+                            <div class="text-xs text-stone-400">Geliefd by meer as <span class="font-semibold text-white">850 mammas</span></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hero Image -->
+                <div class="md:col-span-5 relative h-[520px] md:h-auto">
+                    <img src="imagine_images/qCJAi.jpg" alt="Little Keeps Onthou Boksie met trekker tema romper, hout boksies en 3D sokkies op rustieke hout tafel" 
+                         class="absolute inset-0 w-full h-full object-cover md:rounded-l-[3rem]">
+                    <div class="absolute inset-0 bg-gradient-to-r from-stone-900/70 via-stone-900/20 to-transparent md:hidden"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- TRUST BAR -->
+    <div class="border-b border-stone-200 bg-white">
+        <div class="max-w-screen-2xl mx-auto px-8 py-5">
+            <div class="flex flex-wrap justify-center md:justify-between items-center gap-x-8 gap-y-4 text-xs uppercase tracking-widest font-medium text-stone-500">
+                <div class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-600"></i> <span>Handgemaak in Suid-Afrika</span></div>
+                <div class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-600"></i> <span>Bamboes romper – hipo-allergeen</span></div>
+                <div class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-600"></i> <span>Veilig vir baba vel</span></div>
+                <div class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-600"></i> <span>Landswye versending</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DIE ONTHOU BOKSIE SECTION -->
+    <section id="die-boksie" class="max-w-screen-2xl mx-auto px-8 pt-16 pb-12">
+        <div class="max-w-3xl mx-auto text-center mb-12">
+            <span class="text-[#eab308] text-xs font-semibold tracking-[3px]">WAT IS IN DIE BOKSIE?</span>
+            <h2 class="heading-serif text-5xl tracking-tighter mt-3">Elke Onthou Boksie bevat</h2>
+            <p class="mt-4 text-lg text-stone-600">Alles wat jy nodig het om jou baba se eerste kosbare oomblikke veilig en pragtig te bewaar.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            <!-- Item 1 -->
+            <div class="bg-white rounded-3xl p-7 soft-shadow border border-stone-100">
+                <div class="w-14 h-14 bg-amber-100 text-[#eab308] rounded-2xl flex items-center justify-center mb-6">
+                    <i class="fa-solid fa-tshirt text-3xl"></i>
+                </div>
+                <h3 class="font-semibold text-xl mb-2">Reghoekige Houtboksie</h3>
+                <p class="text-stone-600 text-[15px]">Met jou baba se eerste of gunsteling bamboes romper binne-in. Sag, asemhaalbaar en hipo-allergeen.</p>
+            </div>
+            
+            <!-- Item 2 -->
+            <div class="bg-white rounded-3xl p-7 soft-shadow border border-stone-100">
+                <div class="w-14 h-14 bg-rose-100 text-rose-700 rounded-2xl flex items-center justify-center mb-6">
+                    <i class="fa-solid fa-circle text-3xl"></i>
+                </div>
+                <h3 class="font-semibold text-xl mb-2">Ronde Houtboksie</h3>
+                <p class="text-stone-600 text-[15px]">Spesiale spasie vir die eerste haarlokkie. ’n Klein, kosbare detail wat jy vir altyd sal koester.</p>
+            </div>
+            
+            <!-- Item 3 -->
+            <div class="bg-white rounded-3xl p-7 soft-shadow border border-stone-100">
+                <div class="w-14 h-14 bg-sky-100 text-sky-700 rounded-2xl flex items-center justify-center mb-6">
+                    <i class="fa-solid fa-tooth text-3xl"></i>
+                </div>
+                <h3 class="font-semibold text-xl mb-2">Tandjieboksie</h3>
+                <p class="text-stone-600 text-[15px]">Houtboksie met individuele spasies vir elke tandjie wat getrek word. Netjies en ordelik.</p>
+            </div>
+            
+            <!-- Item 4 -->
+            <div class="bg-white rounded-3xl p-7 soft-shadow border border-stone-100">
+                <div class="w-14 h-14 bg-emerald-100 text-emerald-700 rounded-2xl flex items-center justify-center mb-6">
+                    <i class="fa-solid fa-socks text-3xl"></i>
+                </div>
+                <h3 class="font-semibold text-xl mb-2">3D Tema Sokkies</h3>
+                <p class="text-stone-600 text-[15px]">’n Paar sagte babasokkies met pragtige 3D-tema prentjies wat by jou gekose tema pas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOX OPTIONS -->
+    <section class="max-w-screen-2xl mx-auto px-8 pb-16">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-10">
+                <span class="text-[#eab308] text-xs font-semibold tracking-[3px]">KIES JOU VERPAKKING</span>
+                <h2 class="heading-serif text-4xl tracking-tighter mt-2">Twee luukse opsies</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Option 1 -->
+                <div class="group bg-white border border-stone-200 rounded-3xl overflow-hidden soft-shadow hover:border-[#eab308]/40 transition-all">
+                    <div class="h-72 relative">
+                        <img src="/home/workdir/attachments/IMG_6850.jpg" alt="Luukse Onthou Boksie met strik en Onthou BOKSIE logo" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-4 py-1 rounded-3xl text-xs font-bold tracking-wider">OPSIE 1</div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="font-semibold text-2xl">Luukse Boksie</h3>
+                                <p class="text-stone-500">Met mooi strik &amp; magneet toevoudeksel</p>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-3xl font-bold text-[#eab308]">R2 500</div>
+                            </div>
+                        </div>
+                        <ul class="space-y-2 text-sm text-stone-600">
+                            <li class="flex gap-x-2"><i class="fa-solid fa-check text-emerald-600 mt-1"></i> <span>Premium hout met sagte afwerking</span></li>
+                            <li class="flex gap-x-2"><i class="fa-solid fa-check text-emerald-600 mt-1"></i> <span>Pragtige satyn strik in sagte kleure</span></li>
+                            <li class="flex gap-x-2"><i class="fa-solid fa-check text-emerald-600 mt-1"></i> <span>Sterk magneet sluiting – elegant &amp; veilig</span></li>
+                            <li class="flex gap-x-2"><i class="fa-solid fa-check text-emerald-600 mt-1"></i> <span>Perfek as geskenk of vir vertoon</span></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Option 2 -->
+                <div class="group bg-white border border-stone-200 rounded-3xl overflow-hidden soft-shadow hover:border-[#eab308]/40 transition-all">
+                    <div class="h-72 bg-gradient-to-br from-amber-800 via-stone-700 to-stone-800 flex items-center justify-center relative">
+                        <div class="text-center px-8">
+                            <i class="fa-solid fa-box text-white/90 text-7xl mb-4"></i>
+                            <div class="text-white text-lg font-medium tracking-wide">Gekleurde boks met bypassende tema-omhulsel</div>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-4 py-1 rounded-3xl text-xs font-bold tracking-wider">OPSIE 2</div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="font-semibold text-2xl">Gekleurde Boks</h3>
+                                <p class="text-stone-500">Met bypassende tema omhulsel</p>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-3xl font-bold text-[#eab308]">R2 300</div>
+                            </div>
+                        </div>
+                        <ul class="space-y-2 text-sm text-stone-600">
+                            <li class="flex gap-x-2"><i class="fa-solid fa-check text-emerald-600 mt-1"></i> <span>Stevige gekleurde houtboks</span></li>
+                            <li class="flex gap-x-2"><i class="fa-solid fa-check text-emerald-600 mt-1"></i> <span>Pragtige pasgemaakte tema-omhulsel</span></li>
+                            <li class="flex gap-x-2"><i class="fa-solid fa-check text-emerald-600 mt-1"></i> <span>Ideaal vir alledaagse gebruik &amp; stoor</span></li>
+                            <li class="flex gap-x-2"><i class="fa-solid fa-check text-emerald-600 mt-1"></i> <span>Uitstekende waarde vir geld</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- THEMES / GALLERY SECTION -->
+    <section id="temas" class="bg-white py-16 border-y border-stone-100">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <div class="max-w-2xl mx-auto text-center mb-12">
+                <span class="text-[#eab308] text-xs font-semibold tracking-[3px]">7 PRAGTIGE TEMAS</span>
+                <h2 class="heading-serif text-5xl tracking-tighter mt-3">Kies die tema wat by julle pas</h2>
+                <p class="mt-4 text-lg text-stone-600">Elke tema is sorgvuldig ontwerp met plaaslike, warm Suid-Afrikaanse elemente.</p>
+            </div>
+
+            <!-- Themes Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-5" id="themes-grid">
+                <!-- Populated by JS -->
+            </div>
+            
+            <div class="text-center mt-10">
+                <button onclick="document.getElementById('personaliseer').scrollIntoView({ behavior: 'smooth' })" 
+                        class="inline-flex items-center gap-x-2 text-sm font-semibold px-6 py-3 border border-stone-300 hover:bg-stone-50 rounded-3xl transition-colors">
+                    <span>Bou jou persoonlike kombinasie</span> <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ADD-ONS SECTION -->
+    <section id="byvoegings" class="max-w-screen-2xl mx-auto px-8 py-16">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-10">
+                <span class="text-[#eab308] text-xs font-semibold tracking-[3px]">MAAK DIT PERSOONLIK</span>
+                <h2 class="heading-serif text-4xl tracking-tighter mt-2">Byvoegings</h2>
+                <p class="text-stone-600 mt-3">Voeg ekstra spesiale items by om die boksie nog meer uniek te maak.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Addon 1: Fopspeenknippie -->
+                <div class="bg-white rounded-3xl border border-stone-100 p-7 soft-shadow group">
+                    <div class="flex justify-between items-start mb-5">
+                        <div class="w-12 h-12 bg-pink-100 text-pink-600 rounded-2xl flex items-center justify-center">
+                            <i class="fa-solid fa-baby text-3xl"></i>
+                        </div>
+                        <div class="text-right">
+                            <span class="font-mono text-xl font-semibold text-[#eab308]">R119</span>
+                        </div>
+                    </div>
+                    <h3 class="font-semibold text-xl mb-1.5">Fopspeenknippie met Naam</h3>
+                    <p class="text-sm text-stone-600 mb-5">Persoonlike fopspeenknippie met jou baba se naam daarop geborduur of gegraveer. Veilig en oulik.</p>
+                    <button onclick="showAddonModal(0)" class="text-xs font-semibold flex items-center gap-x-1.5 text-[#eab308] hover:text-[#6b3e0a]">
+                        <span>SIEN VOORBEELD</span> <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </button>
+                </div>
+                
+                <!-- Addon 2: Houtplaatjie -->
+                <div class="bg-white rounded-3xl border border-stone-100 p-7 soft-shadow group">
+                    <div class="flex justify-between items-start mb-5">
+                        <div class="w-12 h-12 bg-amber-100 text-amber-700 rounded-2xl flex items-center justify-center">
+                            <i class="fa-solid fa-clipboard text-3xl"></i>
+                        </div>
+                        <div class="text-right">
+                            <span class="font-mono text-xl font-semibold text-[#eab308]">R89</span>
+                        </div>
+                    </div>
+                    <h3 class="font-semibold text-xl mb-1.5">Houtplaatjie vir Hospitaalbandjie</h3>
+                    <p class="text-sm text-stone-600 mb-5">Pragtige klein houtplaatjie met spasie om die baba se hospitaalbandjie in te sit. ’n Spesiale aandenking.</p>
+                    <button onclick="showAddonModal(1)" class="text-xs font-semibold flex items-center gap-x-1.5 text-[#eab308] hover:text-[#6b3e0a]">
+                        <span>SIEN VOORBEELD</span> <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </button>
+                </div>
+                
+                <!-- Addon 3: Mini Foto Album -->
+                <div class="bg-white rounded-3xl border border-stone-100 p-7 soft-shadow group">
+                    <div class="flex justify-between items-start mb-5">
+                        <div class="w-12 h-12 bg-sky-100 text-sky-700 rounded-2xl flex items-center justify-center">
+                            <i class="fa-solid fa-images text-3xl"></i>
+                        </div>
+                        <div class="text-right">
+                            <span class="font-mono text-xl font-semibold text-[#eab308]">R69</span>
+                        </div>
+                    </div>
+                    <h3 class="font-semibold text-xl mb-1.5">Mini Foto Album vir Sonar-foto's</h3>
+                    <p class="text-sm text-stone-600 mb-5">Klein, sagte foto-album met plek vir die eerste sonar-foto's. Hou daardie spesiale oomblikke bymekaar.</p>
+                    <button onclick="showAddonModal(2)" class="text-xs font-semibold flex items-center gap-x-1.5 text-[#eab308] hover:text-[#6b3e0a]">
+                        <span>SIEN VOORBEELD</span> <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE BUILDER / PERSONALISEER -->
+    <section id="personaliseer" class="bg-[#f8f1e3] py-16 border-y border-stone-200">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-10">
+                    <span class="px-4 py-1 bg-white text-[#eab308] text-xs font-bold tracking-widest rounded-3xl">INTERAKTIEF</span>
+                    <h2 class="heading-serif text-5xl tracking-tighter mt-4">Bou jou eie Onthou Boksie</h2>
+                    <p class="text-stone-600 mt-3 max-w-md mx-auto">Kies jou tema, boks-opsie en byvoegings. Sien dadelik die prys en bou iets unieks vir julle baba.</p>
+                </div>
+
+                <div class="grid lg:grid-cols-12 gap-8">
+                    <!-- Configurator Controls -->
+                    <div class="lg:col-span-7 bg-white rounded-3xl p-8 soft-shadow border border-stone-100">
+                        <div class="space-y-8">
+                            <!-- Theme Selection -->
+                            <div>
+                                <label class="block text-sm font-semibold text-stone-700 mb-3">1. KIES JOU TEMA</label>
+                                <select id="theme-select" onchange="updatePrice()" class="w-full border border-stone-200 bg-white rounded-2xl px-5 py-3.5 text-base focus:outline-none focus:border-[#eab308]">
+                                    <!-- Options populated by JS -->
+                                </select>
+                            </div>
+
+                            <!-- Box Option -->
+                            <div>
+                                <label class="block text-sm font-semibold text-stone-700 mb-3">2. KIES JOU BOKS-OPSIE</label>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <label class="cursor-pointer">
+                                        <input type="radio" name="box-option" value="2500" checked onchange="updatePrice()" class="peer hidden">
+                                        <div class="peer-checked:border-[#eab308] peer-checked:bg-amber-50 border border-stone-200 rounded-2xl p-4 transition-all">
+                                            <div class="flex justify-between">
+                                                <div>
+                                                    <div class="font-semibold">Luukse Boksie</div>
+                                                    <div class="text-xs text-stone-500">Met strik &amp; magneet</div>
+                                                </div>
+                                                <div class="text-right font-mono font-semibold text-[#eab308]">R2 500</div>
+                                            </div>
+                                        </div>
+                                    </label>
+                                    
+                                    <label class="cursor-pointer">
+                                        <input type="radio" name="box-option" value="2300" onchange="updatePrice()" class="peer hidden">
+                                        <div class="peer-checked:border-[#eab308] peer-checked:bg-amber-50 border border-stone-200 rounded-2xl p-4 transition-all">
+                                            <div class="flex justify-between">
+                                                <div>
+                                                    <div class="font-semibold">Gekleurde Boks</div>
+                                                    <div class="text-xs text-stone-500">Met tema-omhulsel</div>
+                                                </div>
+                                                <div class="text-right font-mono font-semibold text-[#eab308]">R2 300</div>
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Add-ons -->
+                            <div>
+                                <label class="block text-sm font-semibold text-stone-700 mb-3">3. VOEG BY (opsioneel)</label>
+                                <div class="space-y-3">
+                                    <label class="flex items-center gap-x-3 cursor-pointer p-3 hover:bg-stone-50 rounded-2xl border border-transparent has-[:checked]:border-[#eab308] has-[:checked]:bg-amber-50 transition-all">
+                                        <input type="checkbox" id="addon1" onchange="updatePrice()" class="w-5 h-5 accent-[#eab308]">
+                                        <div class="flex-1">
+                                            <div class="flex justify-between text-sm">
+                                                <span class="font-medium">Fopspeenknippie met naam</span>
+                                                <span class="font-mono text-[#eab308]">+ R119</span>
+                                            </div>
+                                        </div>
+                                    </label>
+                                    
+                                    <label class="flex items-center gap-x-3 cursor-pointer p-3 hover:bg-stone-50 rounded-2xl border border-transparent has-[:checked]:border-[#eab308] has-[:checked]:bg-amber-50 transition-all">
+                                        <input type="checkbox" id="addon2" onchange="updatePrice()" class="w-5 h-5 accent-[#eab308]">
+                                        <div class="flex-1">
+                                            <div class="flex justify-between text-sm">
+                                                <span class="font-medium">Houtplaatjie vir hospitaalbandjie</span>
+                                                <span class="font-mono text-[#eab308]">+ R89</span>
+                                            </div>
+                                        </div>
+                                    </label>
+                                    
+                                    <label class="flex items-center gap-x-3 cursor-pointer p-3 hover:bg-stone-50 rounded-2xl border border-transparent has-[:checked]:border-[#eab308] has-[:checked]:bg-amber-50 transition-all">
+                                        <input type="checkbox" id="addon3" onchange="updatePrice()" class="w-5 h-5 accent-[#eab308]">
+                                        <div class="flex-1">
+                                            <div class="flex justify-between text-sm">
+                                                <span class="font-medium">Mini foto album vir sonar-foto's</span>
+                                                <span class="font-mono text-[#eab308]">+ R69</span>
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Live Summary -->
+                    <div class="lg:col-span-5">
+                        <div class="bg-white rounded-3xl p-8 soft-shadow border border-stone-100 sticky top-24">
+                            <h4 class="font-semibold tracking-wider text-xs text-stone-500 mb-4">JOU OPSOMMING</h4>
+                            
+                            <div id="summary-theme" class="font-medium text-lg mb-1">—</div>
+                            <div id="summary-box" class="text-sm text-stone-600 mb-5">—</div>
+                            
+                            <div class="border-t border-stone-100 pt-4 space-y-2 text-sm" id="summary-addons">
+                                <!-- Populated dynamically -->
+                            </div>
+                            
+                            <div class="border-t border-stone-200 mt-5 pt-5 flex justify-between items-baseline">
+                                <div class="font-semibold">Totaal</div>
+                                <div id="total-price" class="font-mono text-4xl font-bold text-[#eab308]">R2 500</div>
+                            </div>
+                            
+                            <button onclick="addToCart()" 
+                                    class="mt-6 w-full py-4 bg-[#eab308] hover:bg-[#6b3e0a] transition-colors text-white font-semibold rounded-3xl flex items-center justify-center gap-x-2">
+                                <i class="fa-solid fa-shopping-bag"></i>
+                                <span>VOEG BY MANDJIE</span>
+                            </button>
+                            
+                            <p class="text-[10px] text-center text-stone-400 mt-3">Versending regoor Suid-Afrika • 5-7 werksdae</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIDEO / STORY SECTION -->
+    <section class="max-w-screen-2xl mx-auto px-8 py-16">
+        <div class="max-w-3xl mx-auto bg-white rounded-3xl p-10 border border-stone-100 soft-shadow">
+            <div class="flex items-center gap-x-3 mb-6">
+                <i class="fa-solid fa-play text-[#eab308] text-xl"></i>
+                <span class="uppercase tracking-[2px] text-xs font-bold text-[#eab308]">ONS VIDEO</span>
+            </div>
+            
+            <blockquote class="text-xl leading-tight">
+                “Hierdie onthouboksie is ’n absolute moet hê vir mammas daar buite! Dit help om al die oulikste, kosbaarste herinneringe bymekaar te maak en jou baba se eerste jare regtig spesiaal te vier.”
+            </blockquote>
+            
+            <div class="mt-8 text-sm text-stone-600 space-y-4">
+                <p>Stel jou voor: jy trek jou baba lyfie aan in die sagste kleertjies denkbaar – gemaak uit bamboes, heeltemal hipo-allergeen en veilig vir daai sagte velletjie.</p>
+                <p>Kosbare oomblikke bêre jy dan mooi in pragtige hout-boksies. Perfek vir die eerste tandjies en daai eerste krulletjie hare. Hou daai voetjies ekstra warm en vrolik met ons dierbare 3D-sokkies.</p>
+                <p>Maak dit selfs nóg persoonliker! Voeg ekstra items by. ’n Vrolike fopspeen-knippie met jou baba se naam op, ’n mooi houtplaatjie vir die hospitaalbandjie, of ’n klein album vir die eerste spesiale foto’s. Maak dit jou eie!</p>
+            </div>
+            
+            <div class="mt-6 pt-6 border-t text-xs text-stone-500">
+                Skep herinneringe wat jy vir altyd sal koester met hierdie liefdevolle onthouboksie – spesiaal saamgestel vir jou baba se mooiste eerste jare.
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="bg-white py-14 border-y border-stone-100">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <div class="text-center mb-10">
+                <span class="text-xs font-semibold tracking-widest text-[#eab308]">REGTE MAMMAS, REGTE LIEFDE</span>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                <div class="bg-[#fefce8] p-7 rounded-3xl">
+                    <div class="flex gap-x-1 text-amber-500 mb-4"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
+                    <p class="text-sm italic">"Die boksie is selfs mooier as wat ek verwag het. My seuntjie se eerste romper pas perfek in die trekker-tema boks. Ek huil elke keer as ek daarna kyk."</p>
+                    <div class="mt-5 text-xs font-medium">— Anri, Bloemfontein</div>
+                </div>
+                
+                <div class="bg-[#fefce8] p-7 rounded-3xl">
+                    <div class="flex gap-x-1 text-amber-500 mb-4"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="text-sm italic">"Ek het die Haasore Herinneringe tema gekies vir my dogtertjie. Die sokkies is te oulik vir woorde! Die hele stel voel so spesiaal en persoonlik."</p>
+                    <div class="mt-5 text-xs font-medium">— Nadia, Pretoria</div>
+                </div>
+                
+                <div class="bg-[#fefce8] p-7 rounded-3xl">
+                    <div class="flex gap-x-1 text-amber-500 mb-4"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="text-sm italic">"Die luukse boks met die strik was die perfekte geskenk vir my suster se baba. Sy het gehuil van vreugde toe sy dit oopgemaak het. Baie dankie Little Keeps!"</p>
+                    <div class="mt-5 text-xs font-medium">— Elmarie, Johannesburg</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING OVERVIEW -->
+    <section id="pryse" class="max-w-screen-2xl mx-auto px-8 py-16">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-10">
+                <h2 class="heading-serif text-4xl tracking-tighter">Prysoorsig</h2>
+            </div>
+            
+            <div class="overflow-hidden border border-stone-200 rounded-3xl">
+                <table class="w-full text-sm">
+                    <thead class="bg-stone-50">
+                        <tr class="border-b border-stone-200">
+                            <th class="text-left px-8 py-4 font-semibold">Item / Opsie</th>
+                            <th class="text-right px-8 py-4 font-semibold">Prys</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-stone-100">
+                        <tr>
+                            <td class="px-8 py-4 font-medium">Onthou Boksie (enige tema) – Luukse Boksie (Opsie 1)</td>
+                            <td class="px-8 py-4 text-right font-mono font-semibold">R2 500</td>
+                        </tr>
+                        <tr>
+                            <td class="px-8 py-4 font-medium">Onthou Boksie (enige tema) – Gekleurde Boks (Opsie 2)</td>
+                            <td class="px-8 py-4 text-right font-mono font-semibold">R2 300</td>
+                        </tr>
+                        <tr class="bg-stone-50/60">
+                            <td class="px-8 py-3.5 text-xs text-stone-500 pl-12" colspan="2">Ingesluit: Romper, ronde haarboksie, tandjieboksie &amp; 3D-sokkies</td>
+                        </tr>
+                        <tr>
+                            <td class="px-8 py-4">Fopspeenknippie met baba se naam</td>
+                            <td class="px-8 py-4 text-right font-mono">+ R119</td>
+                        </tr>
+                        <tr>
+                            <td class="px-8 py-4">Houtplaatjie met spasie vir hospitaalbandjie</td>
+                            <td class="px-8 py-4 text-right font-mono">+ R89</td>
+                        </tr>
+                        <tr>
+                            <td class="px-8 py-4">Mini foto album vir sonar-foto's</td>
+                            <td class="px-8 py-4 text-right font-mono">+ R69</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-center text-xs text-stone-500 mt-4">Alle pryse is in Suid-Afrikaanse Rand (ZAR). Versending bykomend volgens ligging.</p>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="bg-[#eab308] text-white py-16">
+        <div class="max-w-screen-2xl mx-auto px-8 text-center">
+            <h2 class="heading-serif text-5xl tracking-tighter">Gereed om julle storie te begin bewaar?</h2>
+            <p class="mt-4 max-w-md mx-auto text-white/80">Elke boksie word met liefde en sorg saamgestel. Jou baba verdien die mooiste herinneringe.</p>
+            
+            <div class="mt-8 flex justify-center">
+                <button onclick="document.getElementById('personaliseer').scrollIntoView({ behavior: 'smooth' })" 
+                        class="px-10 py-4 bg-white text-[#eab308] font-bold rounded-3xl flex items-center gap-x-3 hover:bg-cyan-50 active:scale-[0.985] transition-all">
+                    <span>BEGIN NOU MET JOU BOKSIE</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-stone-900 text-stone-400 text-xs">
+        <div class="max-w-screen-2xl mx-auto px-8 pt-12 pb-8">
+            <div class="flex flex-col md:flex-row justify-between gap-y-8">
+                <div>
+                    <div class="flex items-center gap-x-2 mb-3">
+                        <div class="w-8 h-8 bg-white/10 rounded-2xl flex items-center justify-center">
+                            <i class="fa-solid fa-box-heart text-white"></i>
+                        </div>
+                        <span class="font-bold text-xl text-white tracking-tighter">Little Keeps</span>
+                    </div>
+                    <div class="text-[10px] max-w-[220px]">Handgemaakte onthou boksies vir Suid-Afrikaanse mammas wat kosbare herinneringe wil bewaar.</div>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-x-12 gap-y-8 text-xs">
+                    <div>
+                        <div class="font-semibold text-white mb-2 tracking-wider">VERKEN</div>
+                        <div class="space-y-1.5">
+                            <div><a href="#temas" class="hover:text-white">Temas</a></div>
+                            <div><a href="#die-boksie" class="hover:text-white">Die Boksie</a></div>
+                            <div><a href="#byvoegings" class="hover:text-white">Byvoegings</a></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="font-semibold text-white mb-2 tracking-wider">ONDERSTEUNING</div>
+                        <div class="space-y-1.5">
+                            <div><a href="#" class="hover:text-white">Versending &amp; Terugbetalings</a></div>
+                            <div><a href="#" class="hover:text-white">Gereelde Vrae</a></div>
+                            <div><a href="#" class="hover:text-white">Kontak Ons</a></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="font-semibold text-white mb-2 tracking-wider">KONTAK</div>
+                        <div class="space-y-1">
+                            <div>info@littlekeeps.co.za</div>
+                            <div>+27 82 555 0199</div>
+                            <div class="pt-1">Johannesburg, Gauteng</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 mt-12 pt-6 text-[10px] flex flex-col md:flex-row justify-between items-center gap-y-2">
+                <div>© 2026 Little Keeps. Alle regte voorbehou. Handgemaak met liefde in Suid-Afrika.</div>
+                <div class="flex gap-x-5">
+                    <a href="#" class="hover:text-white">Instagram</a>
+                    <a href="#" class="hover:text-white">Facebook</a>
+                    <a href="#" class="hover:text-white">TikTok</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- THEME MODAL -->
+    <div id="theme-modal" onclick="if (event.target.id === 'theme-modal') closeThemeModal()" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-[100] flex items-center justify-center p-4">
+        <div onclick="event.stopImmediatePropagation()" class="bg-white w-full max-w-4xl rounded-3xl overflow-hidden shadow-2xl modal">
+            <!-- Modal Header -->
+            <div class="px-8 pt-7 pb-5 flex justify-between items-center border-b">
+                <div>
+                    <div id="modal-theme-name" class="font-semibold text-3xl tracking-tight"></div>
+                    <div id="modal-theme-subtitle" class="text-sm text-stone-500"></div>
+                </div>
+                <button onclick="closeThemeModal()" class="w-10 h-10 flex items-center justify-center text-stone-400 hover:text-stone-600">
+                    <i class="fa-solid fa-times text-2xl"></i>
+                </button>
+            </div>
+            
+            <div class="p-8">
+                <!-- Theme Description -->
+                <p id="modal-theme-desc" class="text-stone-600 leading-relaxed"></p>
+                
+                <!-- Gallery -->
+                <div class="mt-8">
+                    <div class="uppercase text-xs tracking-widest font-bold text-stone-400 mb-4">GALERY – VOORBEELDE</div>
+                    <div id="modal-gallery" class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <!-- Populated dynamically -->
+                    </div>
+                </div>
+            </div>
+            
+            <div class="px-8 py-6 bg-stone-50 flex items-center justify-between border-t">
+                <div class="text-xs text-stone-500">Prys vanaf R2 300 – R2 500 (afhangende van boks-opsie)</div>
+                <button onclick="selectThemeFromModal()" class="px-8 py-3 bg-[#eab308] text-white text-sm font-semibold rounded-3xl flex items-center gap-x-2">
+                    <span>KIES HIERDIE TEMA</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ADDON MODALS -->
+    <div id="addon-modal" onclick="if (event.target.id === 'addon-modal') closeAddonModal()" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-[100] flex items-center justify-center p-4">
+        <div onclick="event.stopImmediatePropagation()" class="bg-white w-full max-w-md rounded-3xl overflow-hidden shadow-2xl modal">
+            <div class="p-7">
+                <div class="flex justify-between mb-4">
+                    <div id="addon-modal-title" class="font-semibold text-2xl"></div>
+                    <button onclick="closeAddonModal()" class="text-stone-400"><i class="fa-solid fa-times text-2xl"></i></button>
+                </div>
+                
+                <div id="addon-modal-image" class="h-56 bg-stone-100 rounded-2xl mb-6 flex items-center justify-center overflow-hidden">
+                    <!-- Image inserted via JS -->
+                </div>
+                
+                <p id="addon-modal-desc" class="text-stone-600 text-sm leading-relaxed"></p>
+                
+                <div class="mt-6 pt-5 border-t flex justify-between items-center">
+                    <div>
+                        <span class="text-xs text-stone-500">Prys</span><br>
+                        <span id="addon-modal-price" class="font-mono text-2xl font-bold text-[#eab308]"></span>
+                    </div>
+                    <button onclick="addAddonFromModal()" class="px-6 py-2.5 bg-[#eab308] text-white text-sm font-semibold rounded-3xl">VOEG BY MY BOKSIE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart / Order Success Modal -->
+    <div id="cart-modal" onclick="if (event.target.id === 'cart-modal') closeCartModal()" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-[110] flex items-center justify-center p-4">
+        <div onclick="event.stopImmediatePropagation()" class="bg-white w-full max-w-md rounded-3xl p-8 modal">
+            <div class="text-center">
+                <div class="mx-auto w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mb-5">
+                    <i class="fa-solid fa-check text-4xl"></i>
+                </div>
+                <h3 class="font-semibold text-2xl">Dankie! Jou boksie is bygevoeg.</h3>
+                <p class="text-stone-600 mt-2 text-sm">Ons sal binnekort met jou kontak om die finale besonderhede (naam, aflewering, ens.) te bevestig.</p>
+            </div>
+            
+            <div id="cart-summary" class="mt-7 bg-stone-50 rounded-2xl p-5 text-sm"></div>
+            
+            <div class="mt-6 flex gap-x-3">
+                <button onclick="closeCartModal()" class="flex-1 py-3 border border-stone-300 text-sm font-medium rounded-3xl">Bly hier</button>
+                <button onclick="fakeCheckout()" class="flex-1 py-3 bg-[#eab308] text-white text-sm font-semibold rounded-3xl">Gaan na betaal</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Tailwind script
+        function initializeTailwind() {
+            document.documentElement.style.setProperty('--accent', '#eab308');
+            
+            // Navbar scroll effect
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 20) {
+                    navbar.classList.add('nav-scrolled', 'bg-white/95', 'backdrop-blur-lg');
+                } else {
+                    navbar.classList.remove('nav-scrolled', 'bg-white/95', 'backdrop-blur-lg');
+                }
+            });
+        }
+
+        // Theme Data
+        const themes = [
+            {
+                id: 1,
+                name: "Trekker en stof onthou-boksie",
+                subtitle: "Plaasavontuur • Stoere seuntjie",
+                desc: "Vier die plaaslewe met hierdie stoere trekker tema in aardse kleure. Die perfekte keuse vir die klein boer wat van trekkers, stof en die buitelewe hou. Warm rooi, groen en bruin aksente.",
+                color: "#eab308",
+                examples: [
+                    { img: "imagine_images/qCJAi.jpg", caption: "Volledige stel in die luukse houtboks met trekker romper" },
+                    { video: "tractor_video.mp4", caption: "Kyk na ons amptelike promo video vir die Trekker & Stof tema" },
+                    { img: "https://picsum.photos/id/1016/600/400", caption: "Close-up van die bamboes romper met trekker patroon" },
+                    { img: "https://picsum.photos/id/160/600/400", caption: "Ronde haarboksie en tandjieboksie met plaas aksente" },
+                    { img: "imagine_images/oiZbo.jpg", caption: "3D trekker sokkies – oulik en uniek" }
+                ]
+            },
+            {
+                id: 2,
+                name: "Krimpie se bêre-boks",
+                subtitle: "Knus &amp; Speels • Sagte karakter",
+                desc: "Krimpie se bêre-boks is 'n sagte, knus tema met 'n oulike karakter wat jou baba se skatte veilig en liefdevol bêre. Ideaal vir mammas wat 'n speelse, sagte ontwerp verkies.",
+                color: "#c2410f",
+                examples: [
+                    { img: "https://picsum.photos/id/1005/600/400", caption: "Sagte pastel tema met Krimpie detail op die boks" },
+                    { img: "https://picsum.photos/id/201/600/400", caption: "Die reghoekige boks met sagte romper binne" },
+                    { img: "https://picsum.photos/id/251/600/400", caption: "Ronde haarboksie met klein Krimpie aksent" },
+                    { img: "https://picsum.photos/id/29/600/400", caption: "3D diertjie sokkies wat by die tema pas" }
+                ]
+            },
+            {
+                id: 3,
+                name: "Haasore Herinneringe",
+                subtitle: "Sag &amp; Speels • Haas tema",
+                desc: "Sagte haas tema met oulike ore en pastel kleure. Perfek vir 'n sagte, vrolike en speelse herinnering. Die 3D ore op die sokkies maak hierdie tema ekstra spesiaal.",
+                color: "#9f1239",
+                examples: [
+                    { img: "https://picsum.photos/id/1009/600/400", caption: "Haasore tema in sagte pienk en room" },
+                    { img: "https://picsum.photos/id/133/600/400", caption: "Romper met haas detail in die houtboks" },
+                    { img: "https://picsum.photos/id/180/600/400", caption: "Klein ronde boksies met haas aksente" },
+                    { img: "https://picsum.photos/id/30/600/400", caption: "3D haas ore sokkies – te oulik!" }
+                ]
+            },
+            {
+                id: 4,
+                name: "Klein blom se skatte",
+                subtitle: "Delikaat • Meisie tema",
+                desc: "Delikate blomme en sagte pastelle. Vir die klein dogtertjie wie se skatte soos blomme is – mooi, kosbaar en delikaat. Sagte pienk, laventel en room kleure.",
+                color: "#be185d",
+                examples: [
+                    { img: "https://picsum.photos/id/1018/600/400", caption: "Delikate blom tema met sagte pastel kleure" },
+                    { img: "https://picsum.photos/id/1033/600/400", caption: "Romper met blom patroon in die luukse boks" },
+                    { img: "https://picsum.photos/id/251/600/400", caption: "Mini haar- en tandboksies met blom aksente" },
+                    { img: "https://picsum.photos/id/160/600/400", caption: "3D blom sokkies – sag en vroulik" }
+                ]
+            },
+            {
+                id: 5,
+                name: "Plaas Seuntjie Skatkis",
+                subtitle: "Klassieke plaas • Seuntjie",
+                desc: "Die klassieke plaas tema vir seuntjies. Trekkers, diere en die geliefde buitelewe in warm, robuuste kleure. 'n Tydlose keuse wat nooit uit die mode raak nie.",
+                color: "#166534",
+                examples: [
+                    { img: "imagine_images/qCJAi.jpg", caption: "Volledige plaas skatkis met trekker elemente" },
+                    { img: "https://picsum.photos/id/1016/600/400", caption: "Plaas romper in die reghoekige houtboks" },
+                    { img: "https://picsum.photos/id/160/600/400", caption: "Hout tand- en haarboksies in plaas styl" },
+                    { img: "imagine_images/oiZbo.jpg", caption: "3D plaas diere en trekker sokkies" }
+                ]
+            },
+            {
+                id: 6,
+                name: "Klein plaastrekker Onthou Boks",
+                subtitle: "Trekker gefokus • Avontuurlik",
+                desc: "Fokus op die geliefde plaas trekker. 'n Vrolike en avontuurlike tema vir die klein plaasboer. Groen, geel en bruin kleure met baie trekker besonderhede.",
+                color: "#eab308",
+                examples: [
+                    { img: "imagine_images/qCJAi.jpg", caption: "Trekker tema stel – alles bymekaar" },
+                    { img: "https://picsum.photos/id/160/600/400", caption: "Trekker patroon romper in die boks" },
+                    { img: "https://picsum.photos/id/201/600/400", caption: "Ronde en tandboksies met trekker aksente" },
+                    { img: "imagine_images/oiZbo.jpg", caption: "Iconiese 3D trekker sokkies" }
+                ]
+            },
+            {
+                id: 7,
+                name: "Plaasdogtertjie Skatte",
+                subtitle: "Plaas + Sag • Dogtertjie",
+                desc: "Roos en plaas elemente gekombineer. 'n Mooie tema vir die klein plaas dogtertjie met sagte pienk, blou en room. Die perfekte kombinasie van plaas en vroulikheid.",
+                color: "#9f1239",
+                examples: [
+                    { img: "https://picsum.photos/id/1005/600/400", caption: "Plaasdogtertjie tema met sagte kleure" },
+                    { img: "https://picsum.photos/id/133/600/400", caption: "Romper met plaas + blom detail" },
+                    { img: "https://picsum.photos/id/29/600/400", caption: "Klein boksies met sagte plaas aksente" },
+                    { img: "https://picsum.photos/id/30/600/400", caption: "3D plaas + blom sokkies" }
+                ]
+            }
+        ]
+
+        // Render Themes Grid
+        function renderThemes() {
+            const container = document.getElementById('themes-grid');
+            container.innerHTML = '';
+            
+            themes.forEach(theme => {
+                const card = document.createElement('div');
+                card.className = `theme-card bg-white border border-stone-100 rounded-3xl overflow-hidden cursor-pointer group`;
+                card.innerHTML = `
+                    <div class="h-40 relative overflow-hidden" style="background: linear-gradient(135deg, ${theme.color}15, white)">
+                        <img src="${theme.examples[0].img}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="${theme.name}">
+                        <div class="absolute bottom-0 left-0 right-0 h-2/3 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-3 left-3 right-3">
+                            <div class="text-white text-sm font-semibold tracking-tight drop-shadow">${theme.name}</div>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <div class="text-[10px] uppercase tracking-widest text-stone-400 mb-0.5">${theme.subtitle}</div>
+                        <button onclick="event.stopImmediatePropagation(); showThemeModal(${theme.id});" 
+                                class="mt-3 w-full text-xs py-2 bg-stone-900 hover:bg-black text-white rounded-2xl font-medium transition-colors">
+                            VERKEN GALERY
+                        </button>
+                    </div>
+                `;
+                
+                card.onclick = () => showThemeModal(theme.id);
+                container.appendChild(card);
+            });
+        }
+
+        // Show Theme Modal
+        let currentThemeId = null;
+        
+        function showThemeModal(themeId) {
+            const theme = themes.find(t => t.id === themeId);
+            if (!theme) return;
+            
+            currentThemeId = themeId;
+            
+            document.getElementById('modal-theme-name').innerHTML = theme.name;
+            document.getElementById('modal-theme-subtitle').innerHTML = theme.subtitle;
+            document.getElementById('modal-theme-desc').innerHTML = theme.desc;
+            
+            // Gallery
+            const galleryContainer = document.getElementById('modal-gallery');
+            galleryContainer.innerHTML = '';
+            
+            theme.examples.forEach((ex, index) => {
+                const div = document.createElement('div');
+                div.className = `rounded-2xl overflow-hidden border border-stone-100 bg-stone-50`;
+                
+                if (ex.video) {
+                    div.innerHTML = `
+                        <video controls class="w-full aspect-[4/3] object-cover bg-black" style="max-height: 300px;">
+                            <source src="${ex.video}" type="video/mp4">
+                            Jou blaaier ondersteun nie video nie.
+                        </video>
+                        <div class="p-3 text-xs text-stone-600 leading-tight">${ex.caption}</div>
+                    `;
+                } else {
+                    div.innerHTML = `
+                        <img src="${ex.img}" class="w-full aspect-[4/3] object-cover gallery-img" alt="${ex.caption}">
+                        <div class="p-3 text-xs text-stone-600 leading-tight">${ex.caption}</div>
+                    `;
+                }
+                galleryContainer.appendChild(div);
+            });
+            
+            document.getElementById('theme-modal').classList.remove('hidden');
+            document.getElementById('theme-modal').classList.add('flex');
+        }
+        
+        function closeThemeModal() {
+            const modal = document.getElementById('theme-modal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+        }
+        
+        function selectThemeFromModal() {
+            closeThemeModal();
+            
+            // Set in configurator
+            const select = document.getElementById('theme-select');
+            select.value = currentThemeId;
+            updatePrice();
+            
+            // Scroll to configurator
+            setTimeout(() => {
+                document.getElementById('personaliseer').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 300);
+        }
+
+        // Populate Theme Select in Configurator
+        function populateThemeSelect() {
+            const select = document.getElementById('theme-select');
+            select.innerHTML = '';
+            
+            themes.forEach(theme => {
+                const option = document.createElement('option');
+                option.value = theme.id;
+                option.textContent = theme.name;
+                select.appendChild(option);
+            });
+            
+            // Set default
+            select.value = 1;
+        }
+
+        // Live Price Calculator
+        function updatePrice() {
+            const themeSelect = document.getElementById('theme-select');
+            const boxRadios = document.querySelectorAll('input[name="box-option"]');
+            let boxPrice = 2500;
+            
+            boxRadios.forEach(radio => {
+                if (radio.checked) boxPrice = parseInt(radio.value);
+            });
+            
+            let total = boxPrice;
+            let addonsHTML = '';
+            
+            // Theme
+            const selectedTheme = themes.find(t => t.id == themeSelect.value);
+            document.getElementById('summary-theme').innerHTML = selectedTheme ? selectedTheme.name : '—';
+            
+            // Box
+            const boxLabel = boxPrice === 2500 ? 'Luukse Boksie (met strik)' : 'Gekleurde Boks (met omhulsel)';
+            document.getElementById('summary-box').innerHTML = boxLabel;
+            
+            // Addons
+            const summaryAddons = document.getElementById('summary-addons');
+            summaryAddons.innerHTML = '';
+            
+            let hasAddons = false;
+            
+            if (document.getElementById('addon1').checked) {
+                total += 119;
+                hasAddons = true;
+                const div = document.createElement('div');
+                div.className = 'flex justify-between text-stone-600';
+                div.innerHTML = `<span>Fopspeenknippie met naam</span> <span class="font-mono">R119</span>`;
+                summaryAddons.appendChild(div);
+            }
+            
+            if (document.getElementById('addon2').checked) {
+                total += 89;
+                hasAddons = true;
+                const div = document.createElement('div');
+                div.className = 'flex justify-between text-stone-600';
+                div.innerHTML = `<span>Houtplaatjie vir hospitaalbandjie</span> <span class="font-mono">R89</span>`;
+                summaryAddons.appendChild(div);
+            }
+            
+            if (document.getElementById('addon3').checked) {
+                total += 69;
+                hasAddons = true;
+                const div = document.createElement('div');
+                div.className = 'flex justify-between text-stone-600';
+                div.innerHTML = `<span>Mini foto album vir sonar-foto's</span> <span class="font-mono">R69</span>`;
+                summaryAddons.appendChild(div);
+            }
+            
+            if (!hasAddons) {
+                const div = document.createElement('div');
+                div.className = 'text-stone-400 text-xs italic';
+                div.innerHTML = 'Geen byvoegings gekies nie';
+                summaryAddons.appendChild(div);
+            }
+            
+            document.getElementById('total-price').innerHTML = 'R' + total.toLocaleString('en-ZA');
+        }
+
+        // Add to Cart
+        function addToCart() {
+            const themeSelect = document.getElementById('theme-select');
+            const selectedTheme = themes.find(t => t.id == themeSelect.value);
+            const boxRadios = document.querySelectorAll('input[name="box-option"]');
+            let boxPrice = 2500;
+            let boxType = 'Luukse Boksie';
+            
+            boxRadios.forEach(radio => {
+                if (radio.checked) {
+                    boxPrice = parseInt(radio.value);
+                    boxType = boxPrice === 2500 ? 'Luukse Boksie (met strik & magneet)' : 'Gekleurde Boks (met tema-omhulsel)';
+                }
+            });
+            
+            let total = boxPrice;
+            let addonsList = [];
+            
+            if (document.getElementById('addon1').checked) { total += 119; addonsList.push('Fopspeenknippie met naam (R119)'); }
+            if (document.getElementById('addon2').checked) { total += 89; addonsList.push('Houtplaatjie vir hospitaalbandjie (R89)'); }
+            if (document.getElementById('addon3').checked) { total += 69; addonsList.push('Mini foto album vir sonar-foto\'s (R69)'); }
+            
+            // Show success modal
+            const modal = document.getElementById('cart-modal');
+            const summaryDiv = document.getElementById('cart-summary');
+            
+            let html = `
+                <div class="text-xs uppercase tracking-widest text-stone-400 mb-2">JOU BESTELLING</div>
+                <div class="font-semibold text-base mb-1">${selectedTheme.name}</div>
+                <div class="text-sm text-stone-600 mb-3">${boxType}</div>
+            `;
+            
+            if (addonsList.length > 0) {
+                html += `<div class="text-xs text-stone-500 mb-1">BYVOEGINGS:</div>`;
+                addonsList.forEach(a => {
+                    html += `<div class="text-sm pl-1">• ${a}</div>`;
+                });
+            }
+            
+            html += `<div class="border-t mt-4 pt-3 flex justify-between font-semibold"><span>Totaal</span> <span class="font-mono">R${total}</span></div>`;
+            
+            summaryDiv.innerHTML = html;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+        
+        function closeCartModal() {
+            const modal = document.getElementById('cart-modal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+        }
+        
+        function fakeCheckout() {
+            const modal = document.getElementById('cart-modal');
+            modal.innerHTML = `
+                <div class="bg-white w-full max-w-md rounded-3xl p-9 text-center modal">
+                    <div class="mx-auto w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mb-5">
+                        <i class="fa-solid fa-heart text-4xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-2xl">Dankie vir jou bestelling!</h3>
+                    <p class="mt-3 text-stone-600">Ons span sal binne 24 uur met jou kontak om die baba se naam, afleweringsbesonderhede en enige spesiale versoeke te bevestig.</p>
+                    <p class="mt-6 text-xs text-stone-400">Jy sal 'n bevestigings-e-pos ontvang.</p>
+                    
+                    <button onclick="location.reload()" class="mt-8 w-full py-3.5 bg-[#eab308] text-white font-semibold rounded-3xl">TERUG NA TUISBLAD</button>
+                </div>
+            `;
+        }
+
+        // Addon Modals
+        const addonsData = [
+            {
+                title: "Fopspeenknippie met Naam",
+                price: "R119",
+                desc: "Hierdie oulike fopspeenknippie word persoonlik gemaak met jou baba se naam. Veilig vir baba, maklik om vas te maak en 'n pragtige aandenking. Kies uit verskillende kleure wat by jou tema pas.",
+                img: "https://picsum.photos/id/1005/600/400"
+            },
+            {
+                title: "Houtplaatjie vir Hospitaalbandjie",
+                price: "R89",
+                desc: "Pragtige klein houtplaatjie met 'n spesiale gleuf om die baba se hospitaalbandjie in te sit. 'n Kosbare stukkie geskiedenis wat jy vir altyd kan bewaar saam met die ander skatte.",
+                img: "https://picsum.photos/id/160/600/400"
+            },
+            {
+                title: "Mini Foto Album vir Sonar-foto's",
+                price: "R69",
+                desc: "Klein, sagte foto-album met 10-12 bladsye. Perfek vir die eerste sonar-foto's, geboortekaartjie of eerste foto's. Pas mooi by die houtboksies in.",
+                img: "https://picsum.photos/id/201/600/400"
+            }
+        ];
+        
+        let currentAddonIndex = null;
+        
+        function showAddonModal(index) {
+            currentAddonIndex = index;
+            const data = addonsData[index];
+            
+            document.getElementById('addon-modal-title').innerHTML = data.title;
+            document.getElementById('addon-modal-price').innerHTML = data.price;
+            document.getElementById('addon-modal-desc').innerHTML = data.desc;
+            
+            const imgContainer = document.getElementById('addon-modal-image');
+            imgContainer.innerHTML = `<img src="${data.img}" class="w-full h-full object-cover" alt="${data.title}">`;
+            
+            const modal = document.getElementById('addon-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+        
+        function closeAddonModal() {
+            const modal = document.getElementById('addon-modal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+        }
+        
+        function addAddonFromModal() {
+            closeAddonModal();
+            
+            if (currentAddonIndex === 0) document.getElementById('addon1').checked = true;
+            if (currentAddonIndex === 1) document.getElementById('addon2').checked = true;
+            if (currentAddonIndex === 2) document.getElementById('addon3').checked = true;
+            
+            updatePrice();
+            
+            // Scroll to builder
+            setTimeout(() => {
+                document.getElementById('personaliseer').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 400);
+        }
+
+        // Mobile Menu
+        function toggleMobileMenu() {
+            const nav = document.querySelector('nav');
+            const existing = document.getElementById('mobile-menu');
+            
+            if (existing) {
+                existing.remove();
+                return;
+            }
+            
+            const menu = document.createElement('div');
+            menu.id = 'mobile-menu';
+            menu.className = 'md:hidden absolute top-full left-0 right-0 bg-white border-b shadow-lg px-6 py-6 flex flex-col gap-y-4 text-sm font-medium z-50';
+            menu.innerHTML = `
+                <a href="#temas" class="py-1">Temas</a>
+                <a href="#die-boksie" class="py-1">Die Boksie</a>
+                <a href="#byvoegings" class="py-1">Byvoegings</a>
+                <a href="#personaliseer" class="py-1">Bou Joune</a>
+                <a href="#pryse" class="py-1">Pryse</a>
+                <div class="pt-3 border-t">
+                    <button onclick="document.getElementById('personaliseer').scrollIntoView({ behavior: 'smooth' }); document.getElementById('mobile-menu').remove();" 
+                            class="w-full py-3 bg-[#eab308] text-white rounded-3xl text-sm font-semibold">Bou Jou Onthou Boksie</button>
+                </div>
+            `;
+            nav.appendChild(menu);
+        }
+
+        // Initialize everything
+        function initializeWebsite() {
+            initializeTailwind();
+            renderThemes();
+            populateThemeSelect();
+            
+            // Initial price
+            setTimeout(() => {
+                updatePrice();
+            }, 100);
+            
+            // Make sure theme select triggers price update
+            const themeSelect = document.getElementById('theme-select');
+            themeSelect.addEventListener('change', updatePrice);
+            
+            // Keyboard escape for modals
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    const themeModal = document.getElementById('theme-modal');
+                    const addonModal = document.getElementById('addon-modal');
+                    const cartModal = document.getElementById('cart-modal');
+                    
+                    if (!themeModal.classList.contains('hidden') && themeModal.classList.contains('flex')) {
+                        closeThemeModal();
+                    } else if (!addonModal.classList.contains('hidden') && addonModal.classList.contains('flex')) {
+                        closeAddonModal();
+                    } else if (!cartModal.classList.contains('hidden') && cartModal.classList.contains('flex')) {
+                        closeCartModal();
+                    }
+                }
+            });
+            
+            // Bonus: Pre-select a nice theme
+            console.log('%c[Little Keeps] Website initialized successfully. All interactive features ready.', 'color:#eab308');
+        }
+
+        // Boot
+        window.onload = initializeWebsite;
+    </script>
+</body>
+</html>
